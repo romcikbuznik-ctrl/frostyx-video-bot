@@ -9,7 +9,7 @@ STATS_FILE = "stats.txt"
 
 # Дані спонсора
 SPONSOR_LINK = "https://t.me/BroStarsFree_bot?start=1906858193"
-SPONSOR_USERNAME = "BroStarsFree_bot"  # Виправив юзернейм (без пробілу)
+SPONSOR_USERNAME = "УТЯСТАР"  # Виправив юзернейм (без пробілу)
 
 # Словник для зберігання верифікованих користувачів
 verified_users = {}
@@ -51,7 +51,6 @@ def send_subscription_required(message):
         f"👋 Привет, {user_name}!\n\n"
         f"❌ <b>Доступ запрещен!</b>\n\n"
         f"🤝 Для использования бота необходимо выполнить задания нашего спонсора:\n"
-        f"👉 @{SPONSOR_USERNAME}\n\n"
         f"📌 Нажми кнопку ниже, перейди к спонсору и выполни там задания, а затем нажми 'Я выполнил ✅'"
     )
     
@@ -202,7 +201,7 @@ def download_video(message):
                     bot.send_video(
                         chat_id, 
                         video_file, 
-                        caption=f"📥 Скачано из @{message.from_user.username}\n🤖 @Frostyyx45Bot",
+                        caption=f"📥 Скачано из \n🤖 @Frostyyx45Bot",
                         timeout=500
                     )
                 
