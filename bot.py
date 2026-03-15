@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 STATS_FILE = "stats.txt"
 
 # Дані спонсора
-SPONSOR_LINK = "https://t.me/BroStarsFree_bot?start=1906858193"
+SPONSOR_LINK = "https://t.me/WexGiftRobot?start=1906858193"
 SPONSOR_USERNAME = "УТЯСТАР"  # Виправив юзернейм (без пробілу)
 
 # Словник для зберігання верифікованих користувачів
