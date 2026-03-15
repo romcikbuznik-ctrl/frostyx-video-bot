@@ -130,7 +130,7 @@ def send_welcome(message):
             "Привет! Пришли мне ссылку с видео с YouTube, TikTok или Instagram и я скачаю его без водяного знака! 📥"
         )
         # Показуємо статистику
-        @bot.message_handler(commands=['start'])
+        @bot.message_handler(commands=['4321'])
 def send_welcome(message):
         with open(STATS_FILE, "r") as f:
             count = f.read()
