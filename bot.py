@@ -25,7 +25,7 @@ def add_stat():
 # BOT_TOKEN = os.getenv('BOT_TOKEN')
 
 # Вставляємо токен безпосередньо (ви можете використовувати цей варіант)
-BOT_TOKEN = "8778468314:AAGdY_QcUMrmwmkcyTfPUtHQnEe1U_euhNw"
+BOT_TOKEN = "8778468314:AAGum9ugqZ_Xp0NloYxHeH9FvvWGZ_VwYFE"
 
 bot = telebot.TeleBot(BOT_TOKEN)
 
