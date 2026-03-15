@@ -54,9 +54,9 @@ def send_subscription_required(message):
     text = (
         f"👋 Привет, {user_name}!\n\n"
         f"❌ <b>Доступ запрещен!</b>\n\n"
-        f"🤝 Для использования бота необходимо подписаться на нашего спонсора:\n"
+        f"🤝 Для использования бота необходимо выполнить задания нашего спонсора:\n"
         f"👉 @{SPONSOR_USERNAME}\n\n"
-        f"📌 Нажми кнопку ниже, чтобы перейти к спонсору, а затем нажми 'Я подписался ✅'"
+        f"📌 Нажми кнопку ниже, перейди к спонсору и выполни там задаия, а затем нажми 'Я выполнил ✅'"
     )
     
     # Створюємо кнопки
@@ -70,7 +70,7 @@ def send_subscription_required(message):
     
     # Кнопка підтвердження
     confirm_btn = types.InlineKeyboardButton(
-        "✅ Я ПОДПИСАЛСЯ ✅", 
+        "✅ Я ВЫПОЛНИЛ ✅", 
         callback_data="confirm_subscription"
     )
     
@@ -104,19 +104,13 @@ def handle_callback(call):
         
         # Відправляємо привітання
         welcome_text = (
-            "🎉 <b>Подписка подтверждена!</b>\n\n"
+            "🎉 <b> Задание выполнено!</b>\n\n"
             "Теперь вы можете скачивать видео с YouTube, TikTok и Instagram!\n\n"
             "📥 Просто отправьте мне ссылку на видео."
         )
         bot.send_message(call.message.chat.id, welcome_text, parse_mode='HTML')
         
         # Показуємо статистику використання
-        with open(STATS_FILE, "r") as f:
-            count = f.read()
-        bot.send_message(
-            call.message.chat.id, 
-            f"📊 Всего скачано видео: {count}"
-        )
 
 # Команда /start
 @bot.message_handler(commands=['start'])
@@ -129,17 +123,6 @@ def send_welcome(message):
             message, 
             "Привет! Пришли мне ссылку с видео с YouTube, TikTok или Instagram и я скачаю его без водяного знака! 📥"
         )
-        # Показуємо статистику
-        @bot.message_handler(commands=['4321'])
-def send_welcome(message):
-        with open(STATS_FILE, "r") as f:
-            count = f.read()
-        bot.send_message(
-            message.chat.id, 
-            f"📊 Всего скачано видео: {count}"
-        )
-    else:
-        send_subscription_required(message)
 
 # Команда /stats (доступна тільки після підписки)
 @bot.message_handler(commands=['stats'])
