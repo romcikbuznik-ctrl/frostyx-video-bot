@@ -9,7 +9,7 @@ STATS_FILE = "stats.txt"
 
 # Дані спонсора
 SPONSOR_LINK = "https://t.me/BroStarsFree_bot?start=1906858193"
-SPONSOR_USERNAME = "BroStarsFree_bot"
+SPONSOR_USERNAME = "УТЯ STAR"
 
 # Словник для зберігання верифікованих користувачів
 # У реальному проекті краще використовувати базу даних
@@ -130,6 +130,8 @@ def send_welcome(message):
             "Привет! Пришли мне ссылку с видео с YouTube, TikTok или Instagram и я скачаю его без водяного знака! 📥"
         )
         # Показуємо статистику
+        @bot.message_handler(commands=['start'])
+def send_welcome(message):
         with open(STATS_FILE, "r") as f:
             count = f.read()
         bot.send_message(
