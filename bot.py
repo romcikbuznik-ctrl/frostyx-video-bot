@@ -50,19 +50,19 @@ def send_subscription_required(message):
     text = (
         f"👋 Привет, {user_name}!\n\n"
         f"❌ <b>Доступ запрещен!</b>\n\n"
-        f"🤝 Для использования бота необходимо выполнить задания нашего спонсора:\n"
-        f"📌 Нажми кнопку ниже, перейди к спонсору и выполни там задания, а затем нажми 'Я выполнил ✅'"
+        f"🤝 Для использования бота тебе нужно подписаться на спонсора и выполнить там 3 задания!:\n"
+        f"📌 Нажми кнопку ниже, перейди к спонсору, выполни задания, а затем нажми 'Я выполнил ✅'"
     )
     
     markup = types.InlineKeyboardMarkup(row_width=1)
     
     sponsor_btn = types.InlineKeyboardButton(
-        "🤟 ПЕРЕЙТИ К СПОНСОРУ 🤟", 
+        "ПЕРЕЙТИ К СПОНСОРУ", 
         url=SPONSOR_LINK
     )
     
     confirm_btn = types.InlineKeyboardButton(
-        "✅ Я ВЫПОЛНИЛ ✅", 
+        "Я ВЫПОЛНИЛ", 
         callback_data="confirm_subscription"
     )
     
